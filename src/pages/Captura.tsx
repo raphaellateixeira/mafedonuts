@@ -1,5 +1,5 @@
-import { FormEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { type FormEvent, type ReactNode, useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
 import { CONFIG } from "../config";
 import { eventoLead, lerUtms } from "../lib";
 
@@ -12,7 +12,7 @@ const publico = [
 
 function Check() {
   return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B0124F" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="mt-0.5 shrink-0">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="mt-0.5 shrink-0 text-primary-hover">
       <circle cx="12" cy="12" r="10" />
       <path d="M8 12.5l2.6 2.6L16 9.5" />
     </svg>
@@ -20,11 +20,11 @@ function Check() {
 }
 
 const inputCls =
-  "w-full rounded-xl border-[1.5px] border-borda bg-[#FFFBFC] px-4 py-3.5 text-base text-tinta placeholder:text-[#8A6A76] focus:border-rosa focus:outline-none";
+  "w-full rounded-xl border-[1.5px] border-border bg-field px-4 py-3.5 text-base text-foreground placeholder:text-placeholder focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/20";
 
-function Eyebrow({ children, claro = false }: { children: React.ReactNode; claro?: boolean }) {
+function Eyebrow({ children, claro = false }: { children: ReactNode; claro?: boolean }) {
   return (
-    <p className={`text-sm font-bold uppercase tracking-[0.08em] ${claro ? "text-[#FF8DB5]" : "text-rosaEscuro"}`}>{children}</p>
+    <p className={`text-sm font-bold uppercase tracking-[0.08em] ${claro ? "text-highlight" : "text-primary-hover"}`}>{children}</p>
   );
 }
 
@@ -54,7 +54,7 @@ export default function Captura() {
       // segue para a página de obrigado mesmo se o webhook falhar
     }
     eventoLead();
-    navigate("/obrigado");
+    await navigate({ to: "/obrigado" });
   }
 
   return (
@@ -112,7 +112,7 @@ export default function Captura() {
       </section>
 
       {/* AS DUAS NOITES */}
-      <section className="bg-white px-6 py-[72px]">
+      <section className="bg-card px-6 py-[72px]">
         <div className="mx-auto flex max-w-[1160px] flex-col gap-10">
           <div className="flex max-w-[720px] flex-col gap-2.5">
             <Eyebrow>O que você vai ver nas duas noites</Eyebrow>
@@ -170,10 +170,10 @@ export default function Captura() {
           <div className="flex flex-col gap-[18px]">
             <Eyebrow claro>Quem vai te ensinar</Eyebrow>
             <h2 className="font-display text-[clamp(30px,4vw,44px)] font-extrabold leading-[1.08]">Oi, eu sou a Mafê. Eu comecei exatamente onde você está.</h2>
-            <p className="text-[#F3DCE4]">
+                <p className="text-on-dark-muted">
               Há seis anos, eu fiz meus primeiros donuts com uma batedeira comum, na cozinha da minha casa. Hoje esse doce é o meu negócio: a Mafê Donuts vende pelo WhatsApp e pelo Instagram, e mais de 400 mil pessoas acompanham meu trabalho.
             </p>
-            <p className="text-[#F3DCE4]">Nessa aula eu vou te mostrar o caminho que eu fiz, sem enrolação.</p>
+            <p className="text-on-dark-muted">Nessa aula eu vou te mostrar o caminho que eu fiz, sem enrolação.</p>
           </div>
         </div>
       </section>
@@ -188,7 +188,7 @@ export default function Captura() {
           {/* Trocar pelo nome do aluno, se autorizado */}
           <p className="text-[15px] text-cinzaRosa">Aluno da Mafê</p>
           {/* Espaço para prints de alunos: troque por <img src="/images/print-aluno.jpg" ... /> */}
-          <div className="flex aspect-video w-full max-w-[560px] items-center justify-center rounded-[18px] border-2 border-dashed border-borda bg-white text-[15px] text-[#8A6A76]">
+          <div className="flex aspect-video w-full max-w-[560px] items-center justify-center rounded-[18px] border-2 border-dashed border-borda bg-card text-[15px] text-placeholder">
             [PRINTS DE ALUNOS VENDENDO: PEDIDOS, FORNADAS]
           </div>
         </div>

@@ -20,7 +20,7 @@ export default function Obrigado() {
             Entra agora no grupo do WhatsApp. É lá que eu vou mandar o link das aulas e uns bônus antes do dia 19.
           </p>
           <a href={CONFIG.linkGrupoWhatsApp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-[14px] bg-rosa px-9 py-5 text-lg font-bold text-white no-underline transition hover:bg-rosaEscuro">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.2-5.4A8.5 8.5 0 1 1 21 11.5z" />
             </svg>
             ENTRAR NO GRUPO DO WHATSAPP
