@@ -154,23 +154,21 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-@layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  button, a, input { letter-spacing: 0; }
+* {
+  border-color: var(--color-border);
 }
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+button, a, input { letter-spacing: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
