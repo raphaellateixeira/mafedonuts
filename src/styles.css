@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --shadow-card: 0 18px 40px oklch(0.235 0.036 349 / 0.1);
+  --shadow-badge: 0 12px 28px oklch(0.235 0.036 349 / 0.14);
   --font-sans: "DM Sans", sans-serif;
   --font-display: "Bricolage Grotesque", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);

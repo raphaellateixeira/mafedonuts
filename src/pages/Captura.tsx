@@ -24,7 +24,7 @@ const inputCls =
 
 function Eyebrow({ children, claro = false }: { children: ReactNode; claro?: boolean }) {
   return (
-    <p className={`text-sm font-bold uppercase tracking-[0.08em] ${claro ? "text-highlight" : "text-primary-hover"}`}>{children}</p>
+    <p className={`text-sm font-bold uppercase ${claro ? "text-highlight" : "text-primary-hover"}`}>{children}</p>
   );
 }
 
@@ -59,7 +59,7 @@ export default function Captura() {
 
   return (
     <div className="min-h-screen bg-fundo text-lg leading-relaxed">
-      <header className="bg-tinta px-5 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-fundo">
+      <header className="bg-tinta px-5 py-3 text-center text-sm font-bold uppercase text-fundo">
         Aula ao vivo e gratuita · 19 e 20 de outubro · 20h · no Instagram
       </header>
 
@@ -67,17 +67,17 @@ export default function Captura() {
       <section className="px-6 pb-[72px] pt-16">
         <div className="mx-auto grid max-w-[1160px] items-center gap-14 lg:grid-cols-2">
           <div className="flex flex-col gap-6">
-            <p className="self-start rounded-full bg-rosaClaro px-3.5 py-2 text-sm font-bold uppercase tracking-[0.04em] text-rosaEscuro">
+            <p className="self-start rounded-full bg-rosaClaro px-3.5 py-2 text-sm font-bold uppercase text-rosaEscuro">
               Com a Mafê, da Mafê Donuts
             </p>
-            <h1 className="font-display text-[clamp(40px,6vw,68px)] font-extrabold leading-[1.02] tracking-[-0.02em]">
+            <h1 className="font-display text-[clamp(40px,6vw,68px)] font-extrabold leading-[1.02]">
               Da cozinha de casa para R$ 2 mil por mês
             </h1>
             <p className="max-w-[34ch] text-xl text-tintaSuave">
               Aula ao vivo e gratuita: o passo a passo do donut que custa centavos e vende a R$ 15, mesmo que você nunca tenha feito um doce.
             </p>
 
-            <form id="inscricao" onSubmit={enviar} className="flex max-w-[460px] scroll-mt-6 flex-col gap-3.5 rounded-[20px] bg-white p-7 shadow-[0_18px_40px_rgba(43,22,32,0.10)]">
+            <form id="inscricao" onSubmit={enviar} className="flex max-w-[460px] scroll-mt-6 flex-col gap-3.5 rounded-[20px] bg-card p-7 shadow-card">
               <p className="text-lg font-bold">Garanta sua vaga gratuita</p>
               <label className="flex flex-col gap-1.5 text-sm font-medium">
                 Seu nome
@@ -92,7 +92,7 @@ export default function Captura() {
                 <input name="email" type="email" autoComplete="email" placeholder="voce@email.com" className={inputCls} />
               </label>
               {erro && <p className="text-sm font-medium text-rosaEscuro">{erro}</p>}
-              <button type="submit" disabled={enviando} className="rounded-[14px] bg-rosa px-5 py-[18px] text-[17px] font-bold tracking-[0.02em] text-white transition hover:bg-rosaEscuro disabled:opacity-70">
+              <button type="submit" disabled={enviando} className="rounded-[14px] bg-rosa px-5 py-[18px] text-[17px] font-bold text-primary-foreground transition hover:bg-rosaEscuro disabled:opacity-70">
                 {enviando ? "ENVIANDO..." : "QUERO MINHA VAGA GRATUITA"}
               </button>
               <p className="text-center text-[13px] text-cinzaRosa">
@@ -103,7 +103,7 @@ export default function Captura() {
 
           <div className="relative flex justify-center">
             <img src="/images/donuts-rosa.jpg" alt="Donuts com cobertura rosa e confeitos coloridos" className="aspect-[4/5] w-full max-w-[480px] rounded-[28px] object-cover" />
-            <div className="absolute bottom-7 left-0 flex flex-col gap-0.5 rounded-2xl bg-white px-[18px] py-3.5 shadow-[0_12px_28px_rgba(43,22,32,0.14)]">
+            <div className="absolute bottom-7 left-0 flex flex-col gap-0.5 rounded-2xl bg-card px-[18px] py-3.5 shadow-badge">
               <span className="font-display text-[26px] font-extrabold text-rosaEscuro">Centavos → R$ 15</span>
               <span className="text-[13px] text-cinzaRosa">o custo da massa e o preço de venda</span>
             </div>
@@ -144,7 +144,7 @@ export default function Captura() {
           </div>
           <div className="flex flex-col gap-4">
             {publico.map((t) => (
-              <div key={t} className="flex items-start gap-3.5 rounded-2xl bg-white px-5 py-[18px]">
+              <div key={t} className="flex items-start gap-3.5 rounded-2xl bg-card px-5 py-[18px]">
                 <Check />
                 <p>{t}</p>
               </div>
@@ -201,7 +201,7 @@ export default function Captura() {
             Na sua cozinha já tem tudo que você precisa pra começar.
           </h2>
           <p className="text-xl text-tintaSuave">Aula ao vivo e gratuita · 19 e 20 de outubro, às 20h, no Instagram.</p>
-          <a href="#inscricao" className="rounded-[14px] bg-rosa px-9 py-5 text-lg font-bold text-white no-underline transition hover:bg-rosaEscuro">
+          <a href="#inscricao" className="rounded-[14px] bg-rosa px-9 py-5 text-lg font-bold text-primary-foreground no-underline transition hover:bg-rosaEscuro">
             QUERO MINHA VAGA GRATUITA
           </a>
           <p className="text-sm text-cinzaRosa">Gratuito. Vagas no grupo do WhatsApp sujeitas à capacidade.</p>
